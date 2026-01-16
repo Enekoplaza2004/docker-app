@@ -1,0 +1,27 @@
+services:
+  apache:
+    build:
+      context: apache2
+      dockerfile: Dockerfile
+    container_name: apache
+    ports:
+      - 8080:80
+    networks:
+      - app-net
+  mysql:
+    build:
+      context: mysql
+      dockerfile: Dockerfile
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_DATABASE=baseDatos
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-net
+networks:
+  app-net:
+volumes:
+   db_data:
+
