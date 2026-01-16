@@ -1,3 +1,5 @@
 [submodule "Apache/TSTWEB"]
 	path = Apache/TSTWEB
 	url = https://github.com/Enekoplaza2004/TSTWEB.git
+	branch = docker
+	
